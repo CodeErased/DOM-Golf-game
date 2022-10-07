@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Popups</title>
+    <link rel="stylesheet" href="golfGame.css">
+</head>
+
+<body class="golf-background">
+    
+    <img src="#" id="img">
+    <input type="button" value="Play Again" id="btn" onclick="window.location.reload(true)">
+
+
+
+    <script>
+        document.body.style.backgroundImage = "url('golf-bkg.jpeg')";
+        var par1 = window.prompt("Which Par Course?:");
+        var par = parseInt(par1);
+
+        var strokes1 = window.prompt("How many strokes were played?:");
+        var strokes = parseInt(strokes1);
+
+        let result = document.querySelector("img"); 
+
+        if (strokes == 1) {
+            result.src = "golf2.png";
+        } else if (strokes === par - 2) {
+            result.src = "golf3.png";
+        } else if (strokes === par - 1) {
+            result.src = "golf4.png";
+        } else if (strokes === par - 3) {
+            result.src = "Albatross.webp";
+        } else if (strokes === par - 5) {
+            result.src = "ostrich.png";
+        } else if (strokes <= par - 6) {
+            result.src = "Amazing.jpeg";
+        } else if (strokes === par - 4) {
+            result.src = "condor.png";
+        } else if (strokes === par && strokes != undefined) {
+            result.src = "golf5.png";            
+        } else if (strokes === par + 1) {
+            result.src = "golf6.png";
+        } else if (strokes === par + 2) {
+            result.src = "golf7.png";
+        } else if (strokes >= par + 5) {
+            result.src = "golf8.png";
+        } else if (strokes === par + 3) {
+            result.src = "triplebogey.png";
+        } else if (strokes === par + 4) {
+            result.src = "quadruplebogey.png";
+        } else {
+            alert("Pick valid numbers")
+            result.src = "golf9.jpeg"
+        }
+    </script>
+
+</body>
+
+</html>
